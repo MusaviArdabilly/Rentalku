@@ -1,0 +1,217 @@
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+
+  .container {
+    max-width: 960px;
+  }
+  
+  /*
+   * Custom translucent site header
+   */
+  
+  .site-header {
+    background-color: rgba(0, 0, 0, .85);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+  }
+  .site-header a {
+    color: #8e8e8e;
+    transition: color .15s ease-in-out;
+  }
+  .site-header a:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  /*
+   * Dummy devices (replace them with your own or something else entirely!)
+   */
+  
+  .product-device {
+    position: absolute;
+    right: 10%;
+    bottom: -30%;
+    width: 300px;
+    height: 540px;
+    background-color: #333;
+    border-radius: 21px;
+    transform: rotate(30deg);
+  }
+  
+  .product-device::before {
+    position: absolute;
+    top: 10%;
+    right: 10px;
+    bottom: 10%;
+    left: 10px;
+    content: "";
+    background-color: rgba(255, 255, 255, .1);
+    border-radius: 5px;
+  }
+  
+  .product-device-2 {
+    top: -25%;
+    right: auto;
+    bottom: 0;
+    left: 5%;
+    background-color: #e5e5e5;
+  }
+  
+  
+  /*
+   * Extra utilities
+   */
+  
+  .flex-equal > * {
+    flex: 1;
+  }
+  @media (min-width: 768px) {
+    .flex-md-equal > * {
+      flex: 1;
+    }
+  }
+  
+
+  /*
+   * margin offset
+   */
+
+  .mt-offset-5{
+    margin-top: -5rem;
+  }
+  .mb-offset-5{
+    margin-bottom: -5rem;
+  }
+
+
+    /*
+   * center content
+   */
+  .center_content{
+  top: 50%; right: 50%;
+  transform: translate(50%,-50%);
+  }
+
+  /*
+   * center main content
+   */
+
+  /* index */
+  .min-vh-100-80 {
+    min-height: calc(100vh - 80px);
+  }
+  /* index */
+
+  .min-vh-100-136 {
+    min-height: calc(100vh - 136px);
+  }
+
+  .min-vh-100-180 {
+    min-height: calc(100vh - 170px);
+  }
+
+  .min-vh-100-70 {
+    min-height: calc(100vh - 195px);
+  }
+
+  .min-vh-100-422 {
+    min-height: calc(100vh - 423px);
+  }
+  
+  .bg-dark6{
+    background-color: #363636;
+  }
+  .addons1 {
+    position: absolute;
+    right: -15%;
+    top: -30%;
+    width: 300px;
+    height: 300px;
+    background-color: #363636;
+    border-radius: 50%;
+  }
+  @media screen and (max-width: 541px) {
+    .addons1 {
+      right: -35%;
+    }
+  }
+  @media screen and (max-width: 375px) {
+    .addons1 {
+      right: -55%;
+    }
+  }
+  .addons2 {
+    position: absolute;
+    left: -10%;
+    bottom: -35%;
+    width: 600px;
+    height: 600px;
+    background-color: #ffdf80;
+    border-radius: 50%;
+  }
+  .addons3 {
+    position: absolute;
+    right: -1%;
+    top: -5%;
+    width: 400px;
+    height: 400px;
+    background-color: #363636;
+    border-radius: 50%;
+  }
+  .addons4 {
+    position: absolute;
+    left: -1%;
+    bottom: -5%;
+    width: 700px;
+    height: 700px;
+    background-color: #ffdf80;
+    z-index:0 ;
+    border-radius: 50%;
+  }
+  .addons5 {
+    position: absolute;
+    left: 25%;
+    bottom: -50%;
+    width: 700px;
+    height: 700px;
+    background-color: #ffdf80;
+    z-index:0 ;
+    border-radius: 50%;
+  }
+
+  #uploadprofile_link{
+    text-decoration:none;
+  }
+  #uploadprofile{
+    display:none
+  } 
+
+
+  .profile-picture{
+    object-fit: cover;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+  }
+  .profile-picture-tumbnail{
+    object-fit: cover;
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+  }
+
+  /*  
+   * responsive
+   */
+  
