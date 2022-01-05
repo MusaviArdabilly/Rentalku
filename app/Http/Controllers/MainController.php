@@ -24,7 +24,7 @@ class MainController extends Controller
     
     public function search(Request $request)
     {
-        $locations = Location::get();
+        $locations = Location::groupBy('id_regency')->get();
 
         $location = $request->search;
         $start_date = $request->start_date;
