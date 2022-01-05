@@ -128,11 +128,11 @@
                     <span>Perawatan</span></a>
             </li>
 
-            <?php elseif(Auth::user()->role == "admin"): ?>
+            <?php elseif(Auth::user()->role == "superadmin"): ?>
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item" id="dashboard">
-                <a class="nav-link" href="<?php echo e(asset('/admin/dashboard')); ?>">
+                <a class="nav-link" href="<?php echo e(asset('/super-admin/dashboard')); ?>">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>            
@@ -141,8 +141,8 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item" id="dashboard">
-                <a class="nav-link" href="<?php echo e(asset('/admin/management_user')); ?>">
+            <li class="nav-item" id="manage_user">
+                <a class="nav-link" href="<?php echo e(asset('/super-admin/management_user')); ?>">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>User</span></a>
             </li>            
@@ -151,10 +151,10 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item" id="dashboard">
-                <a class="nav-link" href="<?php echo e(asset('/admin/management_corporation')); ?>">
+            <li class="nav-item" id="manage_agent">
+                <a class="nav-link" href="<?php echo e(asset('/super-admin/management_agent')); ?>">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Perusahaan</span></a>
+                    <span>Agent</span></a>
             </li>            
 
             <?php endif; ?>
