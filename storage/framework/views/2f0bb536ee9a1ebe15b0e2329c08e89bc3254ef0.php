@@ -11,6 +11,9 @@
 
     <title><?php echo $__env->yieldContent('title'); ?></title>
 
+    <!-- Tab Icon -->
+    <link rel="icon" href="<?php echo e(asset("storageImages/mlogo.png")); ?>">
+
     <!-- Custom fonts for this template-->
     <link href="<?php echo e(asset('vendor/fontawesome-free/css/all.min.css')); ?>" rel="stylesheet" type="text/css">
     <link

@@ -6,6 +6,9 @@
 
         <title><?php echo $__env->yieldContent('title'); ?></title>
 
+        <!-- Tab Icon -->
+        <link rel="icon" href="<?php echo e(asset("storageImages/mlogo.png")); ?>">
+
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
 
@@ -24,7 +27,7 @@
         <header class=" sticky-top navbar-dark bg-dark py-1">
             <nav class="container d-flex justify-content-between">
                 <a class="text-light py-2 justify-content-star" href="/" aria-label="Rentalku">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mx-auto" role="img" viewBox="0 0 24 24"><title>Rentalku</title><circle cx="12" cy="12" r="10"/><path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"/></svg>
+                <img src="<?php echo e(asset("storageImages/mlogo.png")); ?>" width="24">
                 </a>
                 <div class="my-auto ">
                     <?php if(Auth::guest()): ?>
