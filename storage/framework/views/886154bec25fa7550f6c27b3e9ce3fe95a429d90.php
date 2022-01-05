@@ -18,7 +18,7 @@
                     <div class="card shadow mb-4">
                         <div class="card-header py-3 d-flex justify-content-between">
                             <div class="my-auto">
-                                <h5 class="my-0 font-weight-bold text-primary">Tambah Produk</h5>
+                                <h5 class="my-auto font-weight-bold text-primary">Tambah Produk</h5>
                             </div>
                         </div>
                         <div class="card-body">

@@ -11,8 +11,8 @@
                 <div class="addons5"></div> -->
                 <div class="d-inline m">
                     <h2 class="text-center my-4 font-weight-bold text-dark">Profil Perusahaan</h2>
-                    <div class="d-flex align-items-center justify-content-center my-auto">
-                        <div class="col-md-4 ">
+                    <div class="d-flex flex-column flex-sm-row  align-items-center justify-content-center my-auto">
+                        <div class="col-12 col-md-4">
                             <div class="card">
                                 <div class="card-body shadow">
                                     <div class="d-flex flex-column align-items-center text-center">
@@ -26,7 +26,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-7">
+                        <div class="col-12 col-md-7 my-2">
                             <div class="card">
                                 <div class="card-body shadow">
                                     <div class="row">

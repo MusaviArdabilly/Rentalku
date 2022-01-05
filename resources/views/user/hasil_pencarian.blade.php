@@ -75,8 +75,8 @@
                 <div class="mx-auto rounded my-4">                
                     <div class="row d-flex justify-content-between">
                             @foreach($products as $product)
-                        <div class="col-sm-12 col-md-6 col-lg-3">
-                            <div class="col-12 shadow-sm rounded bg-light">
+                        <div class="col-6 col-md-6 col-lg-4">
+                            <div class="col-12 shadow-sm rounded bg-light mb-2">
                                 <img class="card-img-top" src="{{ asset("storageImages/product/".$product->picture) }}" alt="Card image cap">
                                 <div class="card-body">
                                     <p class="card-title">{{ $product->title }}</p>

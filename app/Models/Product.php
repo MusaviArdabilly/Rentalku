@@ -9,7 +9,7 @@ class Product extends Model
 {
     use HasFactory;
     
-    protected $table = 'Product';
+    protected $table = 'product';
 
     protected $primaryKey = 'id';
 
@@ -24,7 +24,7 @@ class Product extends Model
     }
 
     public function corporation(){
-    	return $this->belongsTo(corporation::class, 'id_corporation', 'id');
+    	return $this->belongsTo(Corporation::class, 'id_corporation', 'id');
     }
 
     public function location(){

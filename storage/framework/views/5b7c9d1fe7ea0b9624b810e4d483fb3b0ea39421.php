@@ -2,7 +2,7 @@
 <html lang="<?php echo e(str_replace('_', '-', app()->getLocale())); ?>">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=0.75, shrink-to-fit=yes">
+        <meta name="viewport" content="width=device-width, initial-scale=0.75, shrink-to-fit=no">
 
         <title><?php echo $__env->yieldContent('title'); ?></title>
 

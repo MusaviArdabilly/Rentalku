@@ -50,13 +50,15 @@ class UserController extends Controller
         //     $user->save();
         // }
 
-        $this->validate($request, [
-            'picture' => 'required|image|max:4000'
-        ]);
-        $picturename = 'profile-'.Auth::user()->username.'.'.$request->picture->getClientOriginalExtension();
-        $path = Storage::putFileAs('/images/profile/', $request->file('picture'), $picturename);
-        $user->picture = $picturename;
-        $user->save();
+        if($request->picture){
+            $this->validate($request, [
+                'picture' => 'required|image|max:4000'
+            ]);
+            $picturename = 'profile-'.Auth::user()->username.'.'.$request->picture->getClientOriginalExtension();
+            $path = Storage::putFileAs('/images/profile/', $request->file('picture'), $picturename);
+            $user->picture = $picturename;
+            $user->save();
+        }
 
         if($request->name){
             $this->validate($request, [
