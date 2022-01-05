@@ -73,18 +73,15 @@ class ProductController extends Controller
         $product->title = $request->title;
         $product->description = $request->description;
         $product->price = $request->price;
-        // if( $request->picture){
-        //     $picturename = Auth::user()->username.'-product-'.date('Ymdhis').'.'.$request->picture->getClientOriginalExtension();
-        //     $request->picture->move('img/product', $picturename);
-        //     $product->picture = $picturename;
-        // }
-        // $product->save();
-        if( $request->picture){
+        $product->save();
+        
+        if($request->picture){
             $this->validate($request, [
                 'picture' => 'required|image|max:4000'
             ]);
-            $picturename = 'product-'.date('Ymdhis').'-'.Auth::user()->username.'.'.$request->picture->getClientOriginalExtension();
-            $path = Storage::putFileAs('/images/product/', $request->file('picture'), $picturename);
+            $picturename = 'product-'.Auth::user()->username.'-'.$request->picture->getClientOriginalName();
+            Storage::delete('images/profile/'.$user->picture); // Delete old flyer
+            Storage::putFileAs('/images/product/', $request->file('picture'), $picturename);
             $product->picture = $picturename;
             $product->save();
         }
@@ -144,12 +141,14 @@ class ProductController extends Controller
         $product->title = $request->title;
         $product->description = $request->description;
         $product->price = $request->price;
-        if( $request->picture){
-            $picturename = Auth::user()->username.'-product-'.date('Ymdhis').'.'.$request->picture->getClientOriginalExtension();
-            $request->picture->move('img/product', $picturename);
-            $product->picture = $picturename;
-        }
         $product->save();
+        if( $request->picture){
+            $picturename = 'product-'.Auth::user()->username.'-'.$request->picture->getClientOriginalName();
+            Storage::delete('images/profile/'.$user->picture); // Delete old flyer
+            Storage::putFileAs('/images/product/', $request->file('picture'), $picturename);
+            $product->picture = $picturename;
+        $product->save();
+        }
 
         return redirect('/admin/produk');
     }
