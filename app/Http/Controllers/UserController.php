@@ -202,16 +202,18 @@ class UserController extends Controller
 
     //admin
 
-    public function indexAdminUser(Request $request){
-        $listuser = User::paginate(10);
-        
-        return view('admin.admin.user_management', compact('listuser')); 
+    public function superadmin_management_user()
+    {
+        $userdata = User::paginate(15);
+
+        return view('superadmin.user_management', compact('userdata'));
     }
 
-    public function indexAdminCorporation(Request $request){
-        $listcorp = Corporation::paginate(10);
-        
-        return view('admin.admin.corp_management', compact('listcorp')); 
+    public function superadmin_management_agent()
+    {
+        $agentdata = Corporation::paginate(15);
+
+        return view('superadmin.agent_management', compact('agentdata'));
     }
 
     /**

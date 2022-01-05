@@ -3,7 +3,7 @@
 @section('content')
 
 <script type="text/javascript">
-  document.getElementById('admin').classList.add('active');
+  document.getElementById('manage_user').classList.add('active');
 </script>
 
                 <!-- Begin Page Content -->
@@ -42,31 +42,35 @@
                                     <thead>
                                         <tr>
                                             <th width="50px" class="text-center">#</th>
-                                            <th>Nama Perusahaan</th>
+                                            <th>Foto</th>
+                                            <th>Nama</th>
+                                            <th>Username</th>
+                                            <th>Role</th>
+                                            <th>Email</th>
                                             <th>Whatsapp</th>
-                                            <th>Verifikasi</th>
-                                            <th>Status</th>
-                                            <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
                                             <th width="50px" class="text-center">#</th>
-                                            <th>Nama Perusahaan</th>
+                                            <th>Foto</th>
+                                            <th>Nama</th>
+                                            <th>Username</th>
+                                            <th>Role</th>
+                                            <th>Email</th>
                                             <th>Whatsapp</th>
-                                            <th>Verifikasi</th>
-                                            <th>Status</th>
-                                            <th>Aksi</th>
                                         </tr>
                                     </tfoot>
                                     <tbody class="">
-                                        @forelse($listcorp as $key => $corp)
+                                        @forelse($userdata as $key => $user)
                                         <tr>
-                                            <td class="text-center">{{ $listcorp->firstItem()+$key }}</td>
-                                            <td>{{ $corp->name }}</td>
-                                            <td>{{ $corp->whatsapp }}</td>
-                                            <td>{{ $corp->verify }}</td>
-                                            <td>{{ $corp->status }}</td>
+                                            <td class="text-center">{{ $userdata->firstItem()+$key }}</td>
+                                            <td><img src="{{ asset("storageImages/profile/".$user->picture) }}" width="60px"/></td>
+                                            <td>{{ $user->name }}</td>
+                                            <td>{{ $user->username }}</td>
+                                            <td>{{ $user->role }}</td>
+                                            <td>{{ $user->email }}</td>
+                                            <td>{{ $user->phone_number }}</td>
                                         </tr>
                                         @empty
                                         <tr>
@@ -78,7 +82,7 @@
                             </div>
                         </div>
                     </div>
-                            {{ $listcorp->links() }}
+                            {{ $userdata->links() }}
 
                 </div>
 

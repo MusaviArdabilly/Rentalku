@@ -3,7 +3,7 @@
 @section('content')
 
 <script type="text/javascript">
-  document.getElementById('admin').classList.add('active');
+  document.getElementById('manage_agent').classList.add('active');
 </script>
 
                 <!-- Begin Page Content -->
@@ -11,7 +11,7 @@
 
                     <!-- Page Heading -->
                     <h1 class="h3 mb-2 text-gray-800">Agen Rental</h1>
-                    <p class="mb-4">Agen Rental dapat berupa bla bla bla.</p>
+                    <p class="mb-4">Data User yang Mendaftar Menjadi Agen Rental</p>
                     
                     <!-- <div>
                         <a href="/admin/produk/tambah" type="button" class="btn btn-primary mb-4">Tambah Produk</a>
@@ -42,37 +42,29 @@
                                     <thead>
                                         <tr>
                                             <th width="50px" class="text-center">#</th>
-                                            <th>Foto</th>
-                                            <th>Nama</th>
-                                            <th>Username</th>
-                                            <th>Role</th>
-                                            <th>Email</th>
+                                            <th>Nama Perusahaan</th>
                                             <th>Whatsapp</th>
-                                            <th>Aksi</th>
+                                            <th>Verifikasi</th>
+                                            <th>Status</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
                                             <th width="50px" class="text-center">#</th>
-                                            <th>Foto</th>
-                                            <th>Nama</th>
-                                            <th>Username</th>
-                                            <th>Role</th>
-                                            <th>Email</th>
+                                            <th>Nama Perusahaan</th>
                                             <th>Whatsapp</th>
-                                            <th>Aksi</th>
+                                            <th>Verifikasi</th>
+                                            <th>Status</th>
                                         </tr>
                                     </tfoot>
                                     <tbody class="">
-                                        @forelse($listuser as $key => $user)
+                                        @forelse($agentdata as $key => $corp)
                                         <tr>
-                                            <td class="text-center">{{ $listuser->firstItem()+$key }}</td>
-                                            <td><img src="{{ url('/img/profile/'.$user->picture) }}" width="60px"/></td>
-                                            <td>{{ $user->name }}</td>
-                                            <td>{{ $user->username }}</td>
-                                            <td>{{ $user->role }}</td>
-                                            <td>{{ $user->email }}</td>
-                                            <td>{{ $user->phone_number }}</td>
+                                            <td class="text-center">{{ $agentdata->firstItem()+$key }}</td>
+                                            <td>{{ $corp->name }}</td>
+                                            <td>{{ $corp->whatsapp }}</td>
+                                            <td>{{ $corp->verify }}</td>
+                                            <td>{{ $corp->status }}</td>
                                         </tr>
                                         @empty
                                         <tr>
@@ -84,7 +76,7 @@
                             </div>
                         </div>
                     </div>
-                            {{ $listuser->links() }}
+                            {{ $agentdata->links() }}
 
                 </div>
 

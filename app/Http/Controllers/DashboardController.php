@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 use App\Models\Vehicle;
 use App\Models\Product;
 use App\Models\Schedule;
@@ -37,6 +38,17 @@ class DashboardController extends Controller
         $sumoutcome = $sumtax + $summaintenance;
 
         return view('admin.index', compact('userdata', 'totalvehicle', 'totalproduct', 'totaltransaction', 'totaltax', 'totalmaintenance', 'sumtransaction', 'sumtax', 'summaintenance', 'sumoutcome'));
+    }
+
+    public function superadmin_dashboard()
+    {
+        $userdata = Auth::user();
+    	$totaluser = User::count();
+    	$totalagent = User::where('role', 'agent')->count();
+        $totaladvertisement = Product::count();
+        $totaltransaction = Transaction::count();
+
+        return view('superadmin.dashboard', compact('userdata', 'totaluser', 'totalagent', 'totaladvertisement', 'totaltransaction'));
     }
 
     /**

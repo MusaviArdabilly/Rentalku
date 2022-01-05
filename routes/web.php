@@ -47,7 +47,7 @@ Route::get('/register', function () {
 });
 Route::post('/postregister', [AuthController::class, 'register']);
 
-Route::group(['middleware' => ['auth','checkrole:agent,admin']], function(){
+Route::group(['middleware' => ['auth','checkrole:agent']], function(){
     Route::get('/admin/dashboard', [DashboardController::class, 'index']);
     
     //profil
@@ -98,10 +98,10 @@ Route::group(['middleware' => ['auth','checkrole:agent,admin']], function(){
 	Route::get('admin/perawatan/ubah/{id}', [MaintenanceController::class, 'edit']);
 	Route::post('admin/perawatan/ubah/post/{id}', [MaintenanceController::class, 'update']);
 	Route::get('admin/perawatan/hapus/{id}', [MaintenanceController::class, 'destroy']);
+});
 
-    //admin
-    Route::get('/admin/management_user', [UserController::class, 'indexAdminUser']);
-    Route::get('/admin/management_corporation', [UserController::class, 'indexAdminCorporation']);
-
-
+Route::group(['middleware' => ['auth','checkrole:superadmin']], function(){
+    Route::get('/super-admin/dashboard', [DashboardController::class, 'superadmin_dashboard']);
+    Route::get('/super-admin/management_user', [UserController::class, 'superadmin_management_user']);
+    Route::get('/super-admin/management_agent', [UserController::class, 'superadmin_management_agent']);
 });
