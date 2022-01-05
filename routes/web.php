@@ -47,7 +47,7 @@ Route::get('/register', function () {
 });
 Route::post('/postregister', [AuthController::class, 'register']);
 
-Route::group(['middleware' => ['auth','checkrole:agent']], function(){
+Route::group(['middleware' => ['auth','checkrole:agent,superadmin']], function(){
     Route::get('/admin/dashboard', [DashboardController::class, 'index']);
     
     //profil
