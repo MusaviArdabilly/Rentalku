@@ -25,7 +25,7 @@
                                     <div class="col-sm-12">
                                         <select name="search" class="form-select text-capitalize" required="">
                                         <?php $__currentLoopData = $locations; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $location): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                <option value="<?php echo e(strtolower($location->regency->name)); ?>"><?php echo e(strtolower($location->regency->name)); ?></option>
+                                                <option value="<?php echo e(strtolower(str_replace('KABUPATEN','KAB.',$location->regency->name))); ?>"><?php echo e(strtolower(str_replace('KABUPATEN','KAB.',$location->regency->name))); ?></option>
                                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                         </select>
                                     </div>

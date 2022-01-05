@@ -16,10 +16,10 @@
                             <label class="text-secondary">
                                 Lokasi
                             </label>
-                            <div class="col-sm-9">
+                            <div class="col-sm-12">
                                 <select name="search" class="form-select" required="">
                                     <?php $__currentLoopData = $locations; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $location): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                            <option value="<?php echo e(strtolower($location->regency->name)); ?>"><?php echo e(strtolower($location->regency->name)); ?></option>
+                                            <option value="<?php echo e(strtolower(str_replace('KABUPATEN','KAB.',$location->regency->name))); ?>"><?php echo e(strtolower(str_replace('KABUPATEN','KAB.',$location->regency->name))); ?></option>
                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                 </select>
                             </div>
@@ -28,7 +28,7 @@
                             <label class="text-secondary">
                                 Tanggal Mulai
                             </label>
-                            <div class="col-sm-9">
+                            <div class="col-sm-12">
                                 <input name="" type="text" class="form-control datepicker" id="input4" value="<?php echo e($start_date); ?>">
                             </div>
                         </div>
@@ -36,7 +36,7 @@
                             <label class="text-secondary">
                                 Waktu Mulai
                             </label>
-                            <div class="col-sm-9">
+                            <div class="col-sm-12">
                                 <input name="" type="text" class="form-control timepicker" id="input4" value="<?php echo e($start_time); ?>">
                             </div>
                         </div>
@@ -44,7 +44,7 @@
                             <label class="text-secondary">
                                 Tanggal Selesai
                             </label>
-                            <div class="col-sm-9">
+                            <div class="col-sm-12">
                                 <input name="" type="text" class="form-control datepicker" id="input4" value="<?php echo e($finish_date); ?>">
                             </div>
                         </div>
@@ -52,7 +52,7 @@
                             <label class="text-secondary">
                                 Waktu Selesai
                             </label>
-                            <div class="col-sm-9">
+                            <div class="col-sm-12">
                                 <input name="" type="text" class="form-control timepicker" id="input4" value="<?php echo e($finish_time); ?>">
                             </div>
                         </div>
