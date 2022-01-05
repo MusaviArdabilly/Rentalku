@@ -16,10 +16,10 @@
                             <label class="text-secondary">
                                 Lokasi
                             </label>
-                            <div class="col-sm-9">
+                            <div class="col-sm-12">
                                 <select name="search" class="form-select" required="">
                                     @foreach($locations as $location)
-                                            <option value="{{ strtolower($location->regency->name) }}">{{ strtolower($location->regency->name) }}</option>
+                                            <option value="{{ strtolower(str_replace('KABUPATEN','KAB.',$location->regency->name)) }}">{{ strtolower(str_replace('KABUPATEN','KAB.',$location->regency->name)) }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -28,7 +28,7 @@
                             <label class="text-secondary">
                                 Tanggal Mulai
                             </label>
-                            <div class="col-sm-9">
+                            <div class="col-sm-12">
                                 <input name="" type="text" class="form-control datepicker" id="input4" value="{{ $start_date }}">
                             </div>
                         </div>
@@ -36,7 +36,7 @@
                             <label class="text-secondary">
                                 Waktu Mulai
                             </label>
-                            <div class="col-sm-9">
+                            <div class="col-sm-12">
                                 <input name="" type="text" class="form-control timepicker" id="input4" value="{{ $start_time }}">
                             </div>
                         </div>
@@ -44,7 +44,7 @@
                             <label class="text-secondary">
                                 Tanggal Selesai
                             </label>
-                            <div class="col-sm-9">
+                            <div class="col-sm-12">
                                 <input name="" type="text" class="form-control datepicker" id="input4" value="{{ $finish_date }}">
                             </div>
                         </div>
@@ -52,7 +52,7 @@
                             <label class="text-secondary">
                                 Waktu Selesai
                             </label>
-                            <div class="col-sm-9">
+                            <div class="col-sm-12">
                                 <input name="" type="text" class="form-control timepicker" id="input4" value="{{ $finish_time }}">
                             </div>
                         </div>
