@@ -42,20 +42,14 @@ class UserController extends Controller
     public function updateUser(Request $request)
     {
         $user = User::find(Auth::user()->id);
-
-        // if($request->picture){
-        //     $picturename = Auth::user()->username.'-profile-'.date('Ymdhis').'.'.$request->picture->getClientOriginalExtension();
-        //     $request->picture->move('img/profile', $picturename);
-        //     $user->picture = $picturename;
-        //     $user->save();
-        // }
-
+        
         if($request->picture){
             $this->validate($request, [
                 'picture' => 'required|image|max:4000'
             ]);
-            $picturename = 'profile-'.Auth::user()->username.'.'.$request->picture->getClientOriginalExtension();
-            $path = Storage::putFileAs('/images/profile/', $request->file('picture'), $picturename);
+            $picturename = 'profile-'.Auth::user()->username.'-'.$request->picture->getClientOriginalName();
+            Storage::delete('images/profile/'.$user->picture); // Delete old flyer
+            Storage::putFileAs('images/profile', $request->file('picture'), $picturename);
             $user->picture = $picturename;
             $user->save();
         }
