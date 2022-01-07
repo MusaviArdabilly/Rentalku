@@ -25,7 +25,7 @@
                                     <div class="col-sm-12">
                                         <select name="search" class="form-select text-capitalize" required="">
                                         @foreach($locations as $location)
-                                                <option value="{{ strtolower(str_replace('KABUPATEN','KAB.',$location->regency->name)) }}">{{ strtolower(str_replace('KABUPATEN','KAB.',$location->regency->name)) }}</option>
+                                                <option value="{{ strtolower($location->regency->name) }}">{{ strtolower(str_replace('KABUPATEN','KAB.',$location->regency->name)) }}</option>
                                         @endforeach
                                         </select>
                                     </div>
